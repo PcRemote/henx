@@ -106,6 +106,11 @@ func encoderIngestBgraFrame(
 ) {
   let bgraBytes = bgraBytesRaw.toArray()
 
+  if bgraBytes.count == 0 {
+    print("encoderIngestBgraFrame: Recieved empty bgraBytes array")
+    return;
+  }
+
   // Create a CVPixelBuffer from BGRA data
   var pixelBuffer = createCvPixelBufferFromBgraFrameData(
     width,
