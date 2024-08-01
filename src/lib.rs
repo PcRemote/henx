@@ -24,6 +24,10 @@ pub struct VideoEncoder {
     encoder: Option<WVideoEncoder>,
 }
 
+// Needed for threading purposes
+unsafe impl Sync for VideoEncoder {}
+unsafe impl Send for VideoEncoder {}
+
 #[derive(Debug)]
 pub struct VideoEncoderOptions {
     pub width: usize,
