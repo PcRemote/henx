@@ -40,8 +40,8 @@ impl VideoEncoder {
         #[cfg(target_os = "windows")]
         let encoder = Some(
             WVideoEncoder::new(
-                VideoEncoderType::Mp4,
-                VideoEncoderQuality::Uhd2160p,
+                VideoEncoderType::Hevc,
+                VideoEncoderQuality::HD1080p,
                 options.width as u32,
                 options.height as u32,
                 options.path,
